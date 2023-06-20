@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="17dp"
+        android:layout_height="20dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:text="@string/default_location"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:lineSpacingExtra="0sp"
+        android:translationY="-0.06sp"
+        android:textAppearance="@style/large_letters"
+        app:layout_constraintBottom_toTopOf="@id/date"
+        app:layout_constraintEnd_toEndOf="@id/avatar"
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:text="@string/default_date"
+        android:textAppearance="@style/small_letters"
+        app:layout_constraintEnd_toEndOf="@id/avatar"
+        app:layout_constraintStart_toEndOf="@id/location"
+        app:layout_constraintTop_toBottomOf="@id/place" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="location, avatar, date"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/barrierTop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/cart_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="80dp"
+        android:contentDescription="@string/payment"
+        android:text="@string/payment"
+        android:textAllCaps="false"
+        android:layout_gravity="bottom|end"
+        android:clickable="true"
+        android:focusable="true"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

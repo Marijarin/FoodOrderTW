@@ -1,0 +1,10 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Азиатская кухня",
+
+      "image_url": "@drawable/cat"
+    }
+  ]
+}

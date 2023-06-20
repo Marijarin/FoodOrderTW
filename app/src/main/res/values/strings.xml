@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Food Order</string>
+    <string name="title_main_page">Main Page</string>
+    <string name="title_search">Search</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_user_page">User</string>
+    <string name="default_location">St.Petersburg</string>
+    <string name="default_date">August 12th, 2023</string>
+    <string name="money">P</string>
+    <string name="unit">g</string>
+    <string name="description_add_to_cart">Add to cart</string>
+    <string name="all">All menu</string>
+    <string name="payment">"Buy for %1$s"</string>
+    <string name="google_play_unavailable">Google Api Unavailable</string>
+    <string name="title_account">User</string>
+    <string name="quantity" translatable="false">%1$s</string>
+    <string name="avatar">User avatar</string>
+    <string name="isEmpty">Your cart is empty</string>
+</resources>

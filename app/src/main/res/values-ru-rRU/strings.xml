@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Food Order</string>
+    <string name="title_main_page">Главная</string>
+    <string name="title_search">Поиск</string>
+    <string name="title_cart">Корзина</string>
+    <string name="title_user_page">Аккаунт</string>
+    <string name="default_location">Санкт-Петербург</string>
+    <string name="default_date">12 августа, 2023</string>
+    <string name="money">Р</string>
+    <string name="unit">г</string>
+    <string name="description_add_to_cart">Добавить в корзину</string>
+    <string name="all">Все меню</string>
+    <string name="payment">Оплатить %1$s</string>
+    <string name="google_play_unavailable">Google Api недоступно</string>
+    <string name="title_account">Аккаунт</string>
+</resources>

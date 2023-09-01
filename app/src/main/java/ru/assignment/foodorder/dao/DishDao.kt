@@ -34,6 +34,13 @@ interface DishDao {
     """)
     suspend fun clearCart()
 
+    @Query("""
+        UPDATE DishEntity SET
+        isChosen = 0
+         WHERE id = :id
+    """)
+    suspend fun unchoose(id: Long)
+
     @Query("DELETE FROM DishEntity WHERE id = :id")
     suspend fun removeById(id: Long)
 

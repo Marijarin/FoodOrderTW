@@ -1,7 +1,5 @@
 package ru.assignment.foodorder.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -10,13 +8,11 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import ru.assignment.foodorder.dto.Dish
-import ru.assignment.foodorder.model.FeedModelState
 import ru.assignment.foodorder.repository.DishRepository
 import javax.inject.Inject
 
@@ -52,6 +48,15 @@ class CartViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.changeQuantity(q, id)
+            } catch (e: Exception) {
+                e.fillInStackTrace()
+            }
+        }
+    }
+    fun delete(id: Long){
+        viewModelScope.launch {
+            try {
+                repository.unchoose(id)
             } catch (e: Exception) {
                 e.fillInStackTrace()
             }

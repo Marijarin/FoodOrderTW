@@ -33,6 +33,9 @@ class DishesFragment : Fragment() {
         val binding = FragmentDishesBinding.inflate(inflater, container, false)
         val cat = arguments?.getString("cat")
         binding.chosenCategory.text = cat
+        binding.back.setOnClickListener {
+            findNavController().navigateUp()
+        }
         val adapter = DishAdapter(object : OnDishListener {
             override fun onDishClick(dish: Dish) {
                 findNavController().navigate(

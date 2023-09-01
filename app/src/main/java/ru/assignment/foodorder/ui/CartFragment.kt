@@ -46,6 +46,10 @@ class CartFragment : Fragment() {
                 viewModel.changePayment(dish, Q_PLUS)
                 viewModel.change.value++
             }
+
+            override fun onDelete(dish: Dish) {
+                viewModel.delete(dish.id)
+            }
         })
         binding.order.adapter = adapter
         lifecycleScope.launchWhenCreated  {

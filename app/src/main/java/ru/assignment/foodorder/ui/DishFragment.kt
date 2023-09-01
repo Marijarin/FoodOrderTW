@@ -49,9 +49,9 @@ class DishFragment : DialogFragment() {
         binding.apply {
             addToCart.setOnClickListener {
                 viewModel.choose(viewModel.dish.value)
-                close.setOnClickListener {
-                    findNavController().navigateUp()
-                }
+            }
+            close.setOnClickListener {
+                findNavController().navigateUp()
             }
         }
         return binding.root

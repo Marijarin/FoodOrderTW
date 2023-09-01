@@ -1,12 +1,7 @@
 package ru.assignment.foodorder.repository
 
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.flatMapConcat
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.toList
 import ru.assignment.foodorder.api.ApiService
 import ru.assignment.foodorder.dao.DishDao
 import ru.assignment.foodorder.dto.Dish
@@ -72,6 +67,16 @@ class DishRepositoryImpl @Inject constructor(
     override suspend fun clearCart() {
         try {
             dishDao.clearCart()
+        } catch (e: IOException) {
+            throw e.fillInStackTrace()
+        } catch (e: Exception) {
+            throw e.fillInStackTrace()
+        }
+    }
+
+    override suspend fun unchoose(id: Long) {
+        try {
+            dishDao.unchoose(id)
         } catch (e: IOException) {
             throw e.fillInStackTrace()
         } catch (e: Exception) {

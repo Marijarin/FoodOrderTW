@@ -12,5 +12,6 @@ interface DishRepository {
     suspend fun choose(dish: Dish)
     suspend fun clearCart()
     suspend fun changeQuantity(q: Int, id: Long)
+    suspend fun unchoose(id: Long)
     val tags: Flow<List<String>>
 }

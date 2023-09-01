@@ -14,6 +14,7 @@ import ru.assignment.foodorder.dto.Dish
 interface OnCartItemListener {
     fun onQuantityMinus(dish: Dish) {}
     fun onQuantityPlus(dish: Dish) {}
+    fun onDelete(dish: Dish){}
 }
 
 class CartAdapter(
@@ -52,6 +53,8 @@ class CartViewHolder(
                     quantity.text.apply { dish.quantity.digitToChar()  }
                 } else {
                     root.visibility = View.GONE
+                    onCartItemListener.onQuantityMinus(dish)
+                    onCartItemListener.onDelete(dish)
                 }
             }
             increment.setOnClickListener {
